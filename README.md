@@ -1,2 +1,2 @@
 # webapp-react
-Same webapp, different framework 🧪
+🧪 Same webapp, different framework
