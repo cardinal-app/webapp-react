@@ -1,0 +1,23 @@
+#landingSection {
+    height: 100vh;
+}
+
+div.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#backgroundImage {
+    background-image: url('../../../assets/rolling-hills.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#orangeOverlay {
+    background: orangered;
+    background: linear-gradient(65deg, darkred 15%, orangered 50%, orange 100%);
+    opacity: .9;
+    filter: brightness(95%);
+}
