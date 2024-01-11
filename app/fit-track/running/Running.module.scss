@@ -1,0 +1,29 @@
+@import "../../../styles/base";
+
+.contentTable {
+  margin: 0 2rem;
+  width: 70%;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-radius: .5rem;
+  border-color: $pearl25;
+  border-style: solid;
+  text-align: center;
+  font-size: $default-text;
+
+  td {
+    border-width: 1px;
+    border-color: $pearl25;
+    border-style: solid;
+    padding: .5rem;
+    font-weight: $regular;
+  }
+
+  th {
+    border-width: 1px;
+    border-color: $pearl25;
+    border-style: solid;
+    padding: .5rem;
+    font-weight: $medium;
+  }
+}

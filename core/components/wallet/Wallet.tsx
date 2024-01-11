@@ -1,7 +1,7 @@
 import styles from './Wallet.module.scss'
 
 // @ts-ignore
-export const Wallet = (props) => {
+const Wallet = (props) => {
     return (
         <section id={styles.walletSection}>
             <div id={styles.backgroundImage}></div>

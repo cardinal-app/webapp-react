@@ -77,34 +77,11 @@ const FitTrackPage = async () => {
                 </Container>
                 <Container>
                     <Accordion title="Running">
-                        <Running />
+                        <Running weeks={weeks}/>
                     </Accordion>
                 </Container>
             </section>
         </Wallet>
-
-        // <Wallet>
-        //     <main>
-        //         <h1>Fit Track</h1>
-        //         <br/>
-        //         <p>{new Date().toLocaleTimeString()}</p>
-        //         <br/>
-        //         <ul>
-        //             {weeks.map(week =>
-        //                 <li key={week.block + ':' + week.week}>
-        //                     <span className="md:mx-4">{week.block} : {week.week}</span> {week.running.volume}
-        //                 </li>
-        //             )}
-        //         </ul>
-        //         <br/>
-        //         {/*<form action={addWeek}>*/}
-        //         {/*    <input type="number" name="block"/>*/}
-        //         {/*    <input type="number" name="week"/>*/}
-        //         {/*    <input type="number" name="volume"/>*/}
-        //         {/*    <button type="submit">Add Week</button>*/}
-        //         {/*</form>*/}
-        //     </main>
-        // </Wallet>
     );
 }
 
