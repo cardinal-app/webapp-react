@@ -28,37 +28,12 @@ interface GetInitialReturnProps {
 }
 
 const FitTrackPage = async () => {
-
-    // const [formData, setFormData] = useState({
-    //     block: "",
-    //     week: "",
-    //     volume: ""
-    // });
-
     const res = await fetch(
         'http://localhost:8080/weeks'
     );
     
     const weeks: Week[] = (await res.json())['_embedded']['weeks'];
     console.log(weeks);
-
-    // const addWeek = (event: any) => {
-    //     event.preventDefault();
-    //
-    //     console.log(event);
-    //
-    //     // POST the data to the URL of the form
-    //     fetch('http://localhost:8080/weeks', {
-    //         method: "POST",
-    //         body: JSON.stringify({}),
-    //     }).then(() => {
-    //         // setFormData({
-    //         //     block: "",
-    //         //     week: "",
-    //         //     volume: ""
-    //         // })
-    //     })
-    // }
 
     return (
         <Wallet>

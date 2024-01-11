@@ -17,3 +17,34 @@
     cursor: pointer;
   }
 }
+
+#addWeekModalBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: #fff;
+  box-shadow: $drop-shadow;
+}
+
+#addWeekModal {
+  h1 {
+    margin: 2rem 0 -.5rem 2rem;
+    font-weight: $semi-bold;
+  }
+
+  #addWeekForm {
+    margin: 0 auto;
+    padding: 2rem;
+
+    input {
+      margin-bottom: 1rem;
+      display: block;
+      height: 2rem;
+      padding: .5rem 1rem;
+      width: 100%;
+      border: 1px solid $pearl25;
+    }
+  }
+}
