@@ -1,5 +1,5 @@
 import { NextPageContext } from "next";
-import nookies from "nookies";
+import nookies, { parseCookies } from "nookies";
 
 
 const setAuthToken = (username: string, password: string, ctx?: NextPageContext) => {

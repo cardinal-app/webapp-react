@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import '../styles/base.scss';
 
 * {
@@ -10,7 +9,7 @@
   letter-spacing: 1px;
 }
 
-body {
-  background: $black;
+html {
+  height: 100%;
   background: linear-gradient(0deg, $black 40%, $mirage 100%);
 }
