@@ -1,0 +1,154 @@
+
+#backingHeader {
+    text-transform: uppercase;
+    text-align: center;
+    top: 7.5%;
+    position: absolute;
+    width: 100%;
+    opacity: .25;
+    font-size: 12rem;
+    background: -webkit-linear-gradient(270deg, #d45b4a 0%, #d45b4a00 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    user-select: none;
+    letter-spacing: 4rem;
+    filter: brightness(85%);
+
+    @media (max-width: 1500px) {
+        font-size: 10rem;
+        letter-spacing: 2.5rem;
+        top: 5%;
+    }
+}
+
+#loginSection {
+    position: absolute;
+    width: 26rem;
+    height: 32rem;
+    left: calc(50% - (26rem * .5));
+    top: calc(50% - (32rem * .5));
+    text-align: center;
+    box-shadow: 0 .5rem 2rem -.5rem #000000BF;
+    border-radius: 1.5rem;
+    border: 1px solid #e57028bf;
+
+    background: #130904;
+    background: linear-gradient(87deg, #130904 0%, #230e0a 49%, #3e1807 100%);
+
+    #badge {
+        filter: drop-shadow(0 0 .5rem #000);
+        height: 3rem;
+        aspect-ratio: 1 / 1;
+        margin: 4rem auto 0;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 1rem 0 1.75rem 0;
+        letter-spacing: .25rem;
+        background: linear-gradient(90deg, #d45b4a 20%, #e57028 100%);
+        filter: drop-shadow(0 0 .5rem #000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    form {
+        p {
+            font-size: 11px;
+            margin-top: .5rem;
+            font-weight: 500;
+            background: -webkit-linear-gradient(270deg, #fff 0%, #a9a9a9 85%);;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            span {
+                background: -webkit-linear-gradient(0deg, #e57028 0%, #e57028 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-transform: uppercase;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+
+        .formControl {
+            border: none;
+            background: none;
+
+            &:has(button) {
+                position: absolute;
+                bottom: 4rem;
+                width: 100%;
+            }
+
+            .icon {
+                position: absolute;
+                color: #e57028;
+                left: 7.25rem;
+                margin-top: 1.25rem;
+                font-size: 14px;
+            }
+        }
+
+        button {
+            width: 14rem;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 .5rem 2rem -.5rem #000000BF;
+            transition: .15s ease-in-out;
+            letter-spacing: 1.75px;
+            background: #d45b4a;
+            color: #230e0a;
+            background: linear-gradient(90deg, #d45b4a 20%, #e57028bf 100%);
+            border: 1px solid #e5702880;
+            text-transform: uppercase;
+            padding: .75rem 0;
+            border-radius: .5rem;
+            opacity: .95;
+
+            &:hover:not(.disabled) {
+            cursor: pointer;
+                background: linear-gradient(90deg, #d45b4a 0%, #e57028 80%);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.loginInput {
+    background: none;
+    outline: none;
+    margin-top: .5rem;
+    text-align: center;
+    width: 14rem;
+    font-size: 12px;
+    border: 1px solid #e5702880;
+    border-radius: .75rem;
+    padding: .75rem 0;
+    letter-spacing: 1.75px;
+    background: #230e0a;
+    background: -webkit-linear-gradient(270deg, #fff 0%, #a9a9a9 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 0 .5rem 2rem -.5rem #000000BF;
+    opacity: .85;
+
+    &:focus {
+        border: 1px solid #e57028bf;
+        transition: .15s ease-in-out;
+        opacity: 1;
+    }
+
+    &::placeholder {
+        background: -webkit-linear-gradient(270deg, #a9a9a9 0%, #888 85%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &#username {
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,47 @@
+// Orange
+$valencia: #d45b4a;
+$valencia00: #d45b4a00;
+$valencia50: #d45b4a80;
+$valencia75: #d45b4abf;
+$buckthorn: #fdb358;
+$buckthorn00: #fdb35800;
+$buckthorn75: #fdb358bf;
+$beach: #ffffbf;
+$beach75: #ffffbfbf;
+$zest: #e57028;
+$zest00: #e5702800;
+$zest50: #e5702880;
+$zest75: #e57028bf;
+
+// Dark
+$black: #000;
+$black00: #00000000;
+$black25: #00000040;
+$black50: #00000080;
+$crowshead: #230e0a;
+$graphite: #271708;
+$asphalt: #130904;
+$graphite00: #27170800;
+$rebel: #3e1807;
+$rebel00: #3e180700;
+$woodsmoke: #161a1d;
+$walnut: #433228;
+$mirage: #1a262e;
+
+// Light
+$white: #fff;
+$white00: #ffffff00;
+$white25: #ffffff40;
+$white50: #ffffff80;
+$silver-chalice: #a9a9a9;
+$alabaster: #f8f8f8;
+$pearl: #b0b0c2;
+$pearl25: #b0b0c240;
+
+// Text
+$text-dark: $walnut;
+$text-disabled: #888;
+$text-lightest: whitesmoke;
+$text-lighter: #eee;
+$text-light: #ccc;
+$text-light-fade-up: -webkit-linear-gradient(270deg, $white 0%, $silver-chalice 85%);

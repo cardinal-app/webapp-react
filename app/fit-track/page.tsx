@@ -1,5 +1,7 @@
 "use server"
 import React from 'react'
+import { isLoggedIn } from '../../core/helpers/authentication';
+import { redirect } from 'next/navigation';
 
 interface Week {
     block: number;
@@ -12,6 +14,9 @@ interface Week {
 }
 
 const FitTrackPage = async () => {
+    if (!isLoggedIn()) redirect('/login');
+
+
     // const [formData, setFormData] = useState({
     //     block: "",
     //     week: "",
@@ -19,8 +24,7 @@ const FitTrackPage = async () => {
     // });
 
     const res = await fetch(
-        'http://localhost:8080/weeks',
-        { cache: "no-store", next: { revalidate: 3600 }}
+        'http://localhost:8080/weeks'
     );
     
     const weeks: Week[] = (await res.json())['_embedded']['weeks'];
