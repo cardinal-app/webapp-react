@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.scss'
-import { isLoggedIn } from '@/core/helpers/authentication'
-
-const inter = Inter({ subsets: ['latin'] })
+import { authUtil } from '@/core/utils/auth.util'
+import TopBar from '@/core/components/top-bar/TopBar'
+import SideBar from '@/core/components/side-bar/SideBar'
 
 export const metadata: Metadata = {
   title: 'Cardinal',
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 
-  if (isLoggedIn()) {
+  if (!!authUtil.getAuthToken()) {
     return (
         <html lang="en">
           <TopBar></TopBar>
@@ -23,7 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   } else {
     return (
         <html lang="en">
-        <body className="">{children}</body>
+            <body className="">{children}</body>
         </html>
     )
   }

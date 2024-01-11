@@ -1,16 +1,16 @@
 "use client"
 import React from 'react'
 import Landing from '../../core/components/landing/Landing';
-import { login } from '../../core/helpers/authentication';
 import styles from './Login.module.scss';
 import { useRouter } from 'next/navigation';
 import badge from '@/assets/badge.png'
+import { authUtil } from "@/core/utils/auth.util";
 
 const LoginPage = () => {
     const router = useRouter();
 
     const handleLogin = () => {
-        login('jrsmth', 'password');
+        authUtil.setAuthToken('jrsmth', 'password');
         router.push('/');
     }
 

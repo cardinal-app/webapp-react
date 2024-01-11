@@ -1,7 +1,8 @@
 "use server"
 import React from 'react'
-import { isLoggedIn } from '../../core/helpers/authentication';
 import { redirect } from 'next/navigation';
+import { GetInitialProps } from '@/core/interfaces/page.interface';
+import { authUtil } from '@/core/utils/auth.util';
 
 interface Week {
     block: number;
@@ -13,9 +14,11 @@ interface Week {
     };
 }
 
-const FitTrackPage = async () => {
-    if (!isLoggedIn()) redirect('/login');
+interface GetInitialReturnProps {
+    authToken: string | undefined;
+}
 
+const FitTrackPage = async () => {
 
     // const [formData, setFormData] = useState({
     //     block: "",
@@ -71,5 +74,15 @@ const FitTrackPage = async () => {
         </main>
     );
 }
+
+FitTrackPage.getInitialProps = async (ctx: GetInitialProps): Promise<GetInitialReturnProps> => {
+    const authToken = authUtil.getAuthToken(ctx);
+
+    if (!authToken) {
+        redirect('/login');
+    }
+
+    return { authToken };
+};
 
 export default FitTrackPage;

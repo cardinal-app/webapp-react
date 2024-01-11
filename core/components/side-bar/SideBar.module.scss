@@ -1,0 +1,71 @@
+@import '../../../styles/base.scss';
+
+#sideBar {
+  width: 5rem;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 4rem;
+  text-align: center;
+  color: $white;
+
+  .nav-item {
+    margin-top: 1.75rem;
+
+    a {
+      text-decoration: none;
+      color: $white50;
+
+      &.active {
+        color: $mirage;
+
+        .icon {
+          background: linear-gradient(0deg, $valencia 50%, $zest 100%);
+
+        }
+
+        p {
+          color: $zest;
+        }
+      }
+    }
+
+    .icon {
+      height: 2.25rem;
+      display: flex;
+      width: 2.25rem;
+      margin: auto;
+      border-radius: .5rem;
+      align-items: center;
+      justify-content: center;
+      transition: .1s;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 9px;
+      margin-top: .25rem;
+      color: $white50;
+    }
+
+    &:hover {
+      .icon {
+        background: #FFFFFF1F;
+      }
+    }
+  }
+}
+
+.user {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.25rem;
+
+  #avatar {
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: $drop-shadow;
+    cursor: pointer;
+  }
+}

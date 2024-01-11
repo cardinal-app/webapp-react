@@ -1,0 +1,40 @@
+#landingSection {
+    height: 100vh;
+}
+
+div.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#backgroundImage {
+    background-image: url('../../../assets/rolling-hills.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#orangeOverlay {
+    background: #d45b4a;
+    background: linear-gradient(65deg, #161a1d 15%, #d45b4a 50%, #e57028 100%);
+    opacity: .9;
+    filter: brightness(95%);
+}
+
+#yellowOverlay {
+    background: #fdb358;
+    background: radial-gradient(ellipse at right top, #fff 0%, #ffffbf 5%, #ffffbfbf 10%, #fdb35800 45%);
+    opacity: .8;
+    filter: brightness(120%);
+}
+
+#darkOverlay1 {
+    background: #000;
+    background: linear-gradient(0deg, #000 0%, #00000000 50%);
+}
+
+#darkOverlay2 {
+    background: #000;
+    background: linear-gradient(25deg, #000 0%, #00000000 60%);
+}
