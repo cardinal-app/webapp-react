@@ -1,0 +1,32 @@
+@import "../../../styles/base.scss";
+
+.accordionSection {
+  margin-bottom: 4rem;
+
+  .accordionHeader {
+    cursor: pointer;
+    padding-top: 2rem;
+    border-top: 1px solid $pearl25;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      font-weight: $semi-bold;
+      letter-spacing: 2px;
+      color: $pearl;
+
+      .icon {
+        margin-right: 1rem;
+      }
+
+      &.expanded {
+        color: $walnut;
+      }
+    }
+  }
+
+  .accordionContent {
+    margin-top: 2rem;
+  }
+
+}

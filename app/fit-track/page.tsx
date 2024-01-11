@@ -4,6 +4,14 @@ import { redirect } from 'next/navigation';
 import { GetInitialProps } from '@/core/interfaces/page.interface';
 import { authUtil } from '@/core/utils/auth.util';
 import Wallet from '@/core/components/wallet/Wallet';
+import Menu from '@/core/components/menu/Menu';
+import styles from './FitTrack.module.scss'
+import Running from './running/Running';
+import Resistance from './resistance/Resistance';
+import General from './general/General';
+import Container from '@/core/components/container/Container';
+import Accordion from '@/core/components/accordion/Accordion';
+import FitTrackAdmin from './admin/Admin';
 
 interface Week {
     block: number;
@@ -53,29 +61,50 @@ const FitTrackPage = async () => {
     // }
 
     return (
-
         <Wallet>
-            <main>
-                <h1>Fit Track</h1>
-                <br/>
-                <p>{new Date().toLocaleTimeString()}</p>
-                <br/>
-                <ul>
-                    {weeks.map(week =>
-                        <li key={week.block + ':' + week.week}>
-                            <span className="md:mx-4">{week.block} : {week.week}</span> {week.running.volume}
-                        </li>
-                    )}
-                </ul>
-                <br/>
-                {/*<form action={addWeek}>*/}
-                {/*    <input type="number" name="block"/>*/}
-                {/*    <input type="number" name="week"/>*/}
-                {/*    <input type="number" name="volume"/>*/}
-                {/*    <button type="submit">Add Week</button>*/}
-                {/*</form>*/}
-            </main>
+            <Menu>Fit Track</Menu>
+            <section id={styles.fitTrackSection}>
+                <FitTrackAdmin />
+                <Container>
+                    <Accordion title="General">
+                        <General />
+                    </Accordion>
+                </Container>
+                <Container>
+                    <Accordion title="Resistance">
+                        <Resistance />
+                    </Accordion>
+                </Container>
+                <Container>
+                    <Accordion title="Running">
+                        <Running />
+                    </Accordion>
+                </Container>
+            </section>
         </Wallet>
+
+        // <Wallet>
+        //     <main>
+        //         <h1>Fit Track</h1>
+        //         <br/>
+        //         <p>{new Date().toLocaleTimeString()}</p>
+        //         <br/>
+        //         <ul>
+        //             {weeks.map(week =>
+        //                 <li key={week.block + ':' + week.week}>
+        //                     <span className="md:mx-4">{week.block} : {week.week}</span> {week.running.volume}
+        //                 </li>
+        //             )}
+        //         </ul>
+        //         <br/>
+        //         {/*<form action={addWeek}>*/}
+        //         {/*    <input type="number" name="block"/>*/}
+        //         {/*    <input type="number" name="week"/>*/}
+        //         {/*    <input type="number" name="volume"/>*/}
+        //         {/*    <button type="submit">Add Week</button>*/}
+        //         {/*</form>*/}
+        //     </main>
+        // </Wallet>
     );
 }
 
