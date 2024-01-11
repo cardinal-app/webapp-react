@@ -3,6 +3,7 @@ import React from 'react'
 import { redirect } from 'next/navigation';
 import { GetInitialProps } from '@/core/interfaces/page.interface';
 import { authUtil } from '@/core/utils/auth.util';
+import Wallet from '@/core/components/wallet/Wallet';
 
 interface Week {
     block: number;
@@ -52,26 +53,29 @@ const FitTrackPage = async () => {
     // }
 
     return (
-        <main>
-            <h1>Fit Track</h1>
-            <br/>
-            <p>{new Date().toLocaleTimeString()}</p>
-            <br/>
-            <ul>
-                {weeks.map(week =>
-                    <li key={week.block + ':' + week.week}>
-                        <span className="md:mx-4">{week.block} : {week.week}</span> {week.running.volume}
-                    </li>
-                )}
-            </ul>
-            <br/>
-            {/*<form action={addWeek}>*/}
-            {/*    <input type="number" name="block"/>*/}
-            {/*    <input type="number" name="week"/>*/}
-            {/*    <input type="number" name="volume"/>*/}
-            {/*    <button type="submit">Add Week</button>*/}
-            {/*</form>*/}
-        </main>
+
+        <Wallet>
+            <main>
+                <h1>Fit Track</h1>
+                <br/>
+                <p>{new Date().toLocaleTimeString()}</p>
+                <br/>
+                <ul>
+                    {weeks.map(week =>
+                        <li key={week.block + ':' + week.week}>
+                            <span className="md:mx-4">{week.block} : {week.week}</span> {week.running.volume}
+                        </li>
+                    )}
+                </ul>
+                <br/>
+                {/*<form action={addWeek}>*/}
+                {/*    <input type="number" name="block"/>*/}
+                {/*    <input type="number" name="week"/>*/}
+                {/*    <input type="number" name="volume"/>*/}
+                {/*    <button type="submit">Add Week</button>*/}
+                {/*</form>*/}
+            </main>
+        </Wallet>
     );
 }
 
@@ -82,7 +86,7 @@ FitTrackPage.getInitialProps = async (ctx: GetInitialProps): Promise<GetInitialR
         redirect('/login');
     }
 
-    return { authToken };
+    return {authToken};
 };
 
 export default FitTrackPage;

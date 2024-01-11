@@ -27,7 +27,9 @@ const SideBar = () => {
                     </div>
                 </nav>
                 <div id={styles.user}>
-                    <img id={styles.avatar} src={avatar.src}></img>
+                    <Link href="/login" className={styles.link}>
+                        <img id={styles.avatar} src={avatar.src}></img>
+                    </Link>
                 </div>
             </>
         )
