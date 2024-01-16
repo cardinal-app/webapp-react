@@ -23,7 +23,8 @@ const Running = (props) => {
                 <tr key={week.block + ':' + week.week}>
                     <td>{week.block} : {week.week}</td>
                     <td>{!!week.weekCommencing ? week.weekCommencing.toString() : ''}</td>
-                    <td>{week.running.volume}</td>
+                    <td>{(week as any)["volume"]}</td>
+                    {/*<td>{week.running.volume}</td>*/}
                 </tr>
             )}
         </table>

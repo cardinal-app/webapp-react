@@ -1,5 +1,5 @@
 "use server"
-import React from 'react'
+import React, { Suspense } from 'react'
 import { redirect } from 'next/navigation';
 import { GetInitialProps } from '@/core/interfaces/page.interface';
 import { authUtil } from '@/core/utils/auth.util';
@@ -12,6 +12,8 @@ import General from './general/General';
 import Container from '@/core/components/container/Container';
 import Accordion from '@/core/components/accordion/Accordion';
 import FitTrackAdmin from './admin/Admin';
+import { getWeeks } from '@/lib/weeks';
+import FitTrackLoadingPage from './loading';
 
 interface Week {
     block: number;
@@ -27,34 +29,46 @@ interface GetInitialReturnProps {
     authToken: string | undefined;
 }
 
-const FitTrackPage = async () => {
-    const res = await fetch(
-        'http://localhost:8080/weeks'
-    );
+async function FitTrackContent() {
+    const weeks: Week[] = await getWeeks();
     
-    const weeks: Week[] = (await res.json())['_embedded']['weeks'];
-    console.log(weeks);
+    return (
+        <>
+            <Container>
+                <Accordion title="General">
+                    <General />
+                </Accordion>
+            </Container>
+            <Container>
+                <Accordion title="Resistance">
+                    <Resistance />
+                </Accordion>
+            </Container>
+            <Container>
+                <Accordion title="Running">
+                    <Running weeks={weeks}/>
+                </Accordion>
+            </Container>
+        </>
+    )
+}
+
+const FitTrackPage = async () => {
+    // const res = await fetch(
+    //     'http://localhost:8080/weeks'
+    // );
+
+    // const weeks: Week[] = (await res.json())['_embedded']['weeks'];
+    // console.log(weeks);
 
     return (
         <Wallet>
             <Menu>Fit Track</Menu>
             <section id={styles.fitTrackSection}>
                 <FitTrackAdmin />
-                <Container>
-                    <Accordion title="General">
-                        <General />
-                    </Accordion>
-                </Container>
-                <Container>
-                    <Accordion title="Resistance">
-                        <Resistance />
-                    </Accordion>
-                </Container>
-                <Container>
-                    <Accordion title="Running">
-                        <Running weeks={weeks}/>
-                    </Accordion>
-                </Container>
+                <Suspense fallback={<FitTrackLoadingPage />}>
+                    <FitTrackContent />
+                </Suspense>
             </section>
         </Wallet>
     );

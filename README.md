@@ -19,3 +19,4 @@
 * Create app : `npx create-next-app@latest`
 * Create component : ``
 * Start app : `npm run dev`
+* Init data : `node ./lib/initdb.js`
