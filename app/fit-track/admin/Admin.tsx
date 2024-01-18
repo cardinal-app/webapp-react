@@ -4,6 +4,8 @@ import styles from './Admin.module.scss';
 import * as React from 'react';
 import { Box, Modal, Button } from "@mui/material";
 import { useState } from "react";
+import { submitWeek } from "@/lib/actions.js";
+import { useFormStatus, useFormState } from 'react-dom';
 
 export default function FitTrackAdmin() {
     const [open, setOpen] = React.useState(false);
@@ -13,8 +15,10 @@ export default function FitTrackAdmin() {
     const [block, setBlock] = useState("");
     const [week, setWeek] = useState("");
     const [volume, setVolume] = useState("");
-
-
+    
+    const { pending } = useFormStatus();
+    const [state, formAction] = useFormState(submitWeek, null);
+    
     const addWeek = (event: any) => {
         event.preventDefault();
         
@@ -44,7 +48,7 @@ export default function FitTrackAdmin() {
             <header id={styles.fitTrackHeader}>
                 <p>Import</p>
                 <p>Export</p>
-                <p onClick={handleOpen}>Add Week</p>
+                <p onClick={handleOpen}>{ pending ? "Submitting..." : "Add Week" }</p>
             </header>
             <Container>
                 <p>B14:W4</p>
@@ -58,11 +62,17 @@ export default function FitTrackAdmin() {
             aria-describedby="modal-modal-description">
             <Box id={styles.addWeekModalBox}>
                 <h1>Add Week</h1>
-                <form id={styles.addWeekForm}>
-                    <label>Block: <input type="number" value={block} onChange={(e) => setBlock(e.target.value)}/></label>
-                    <label>Week: <input type="number" value={week} onChange={(e) => setWeek(e.target.value)}/></label>
-                    <label>Volume (miles): <input type="number" value={volume} onChange={(e) => setVolume(e.target.value)}/></label>
-                    <Button onClick={addWeek}>Submit</Button>
+                {/*<form id={styles.addWeekForm}>*/}
+                {/*    <label>Block: <input type="number" value={block} onChange={(e) => setBlock(e.target.value)}/></label>*/}
+                {/*    <label>Week: <input type="number" value={week} onChange={(e) => setWeek(e.target.value)}/></label>*/}
+                {/*    <label>Volume (miles): <input type="number" value={volume} onChange={(e) => setVolume(e.target.value)}/></label>*/}
+                {/*    <Button onClick={addWeek}>Submit</Button>*/}
+                {/*</form>*/}
+                <form id={styles.addWeekForm} action={formAction}>
+                    <label>Block: <input type="number" id="block" name="block"/></label>
+                    <label>Week: <input type="number" id="week" name="week" /></label>
+                    <label>Volume (miles): <input type="number" id="volume" name="volume"/></label>
+                    <Button type="submit" disabled={pending}>{ pending ? "Submitting..." : "Submit" }</Button>
                 </form>
             </Box>
         </Modal>

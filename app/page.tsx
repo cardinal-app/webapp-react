@@ -5,6 +5,11 @@ import { GetInitialProps } from "@/core/interfaces/page.interface";
 import { redirect } from "next/navigation";
 import Home from "./home/page";
 
+// export const metadata = {
+//     title: "Cardinal",
+//     description: "/ˈkɑːdɪnəl/ Of the greatest importance; fundamental."
+// }
+
 interface GetInitialReturnProps {
     authToken: string | undefined;
 }
