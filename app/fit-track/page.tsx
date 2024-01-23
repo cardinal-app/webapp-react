@@ -1,8 +1,5 @@
 "use server"
 import React, { Suspense } from 'react'
-import { redirect } from 'next/navigation';
-import { GetInitialProps } from '@/core/interfaces/page.interface';
-import { authUtil } from '@/core/utils/auth.util';
 import Wallet from '@/core/components/wallet/Wallet';
 import Menu from '@/core/components/menu/Menu';
 import styles from './FitTrack.module.scss'
@@ -23,10 +20,6 @@ interface Week {
         session: Object[],
         volume: number;
     };
-}
-
-interface GetInitialReturnProps {
-    authToken: string | undefined;
 }
 
 async function FitTrackContent() {
@@ -73,15 +66,5 @@ const FitTrackPage = async () => {
         </Wallet>
     );
 }
-
-FitTrackPage.getInitialProps = async (ctx: GetInitialProps): Promise<GetInitialReturnProps> => {
-    const authToken = authUtil.getAuthToken(ctx);
-
-    if (!authToken) {
-        redirect('/login');
-    }
-
-    return {authToken};
-};
 
 export default FitTrackPage;
