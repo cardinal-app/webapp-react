@@ -9,8 +9,8 @@
 [react.cardinal.jrsmth.io](https://www.react.cardinal.jrsmth.io)
 
 ### Explanation
-- 🧬 Cardinal is a suite of tools to assist with Life Admin ([see more](https://github.com/cardinal-app))
-- 💻 This is a publicly accessible demo built experimentally with Next.js 
+- 🧬 Suite of tools to assist with Life Admin ([see more](https://github.com/cardinal-app))
+- 💻 Public demo built with Next.js 
 
 ### Project Structure
 ```tsx
