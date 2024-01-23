@@ -1,22 +1,31 @@
 [![jhc github](https://img.shields.io/badge/GitHub-jrsmth-181717.svg?style=flat&logo=github)](https://github.com/jrsmth)
 [![next.js](https://img.shields.io/badge/next.js%20-14%20-black.svg?style=flat&logo=next.js&logoColor=white)](https://github.com/vercel/next.js)
-# webapp-react
+[![test-and-release](https://github.com/jrsmth/ultima/actions/workflows/main.yaml/badge.svg)](https://github.com/jrsmth/ultima/actions/workflows/main.yaml)
+
+# <img src="./assets/badge.png" width="28" alt="Logo"> Webapp (React)
 🧪 Same app, new framework
 
-<br>
+[react.cardinal.jrsmth.io](https://www.react.cardinal.jrsmth.io)
+
+<!-- Replace me with an equally captivating .gif -->
+![ultima_demo](https://github.com/jrsmth/ultima/assets/34093915/701a547e-66ab-4178-9da1-cb5ae9654166)
+
+### Explanation
+- 🧬 Cardinal is a suite of tools to assist with Life Admin ([see more](https://github.com/cardinal-app))
+- 💻 This is a publicly accessible demo built experimentally with Next.js 
 
 ### Project Structure
-- app (app router: container for routing system)
-  - components
-    - pages
-    - additional (components)
-  - utils
-    
-
-<br>
-
-### Commands
-* Create app : `npx create-next-app@latest`
-* Create component : ``
-* Start app : `npm run dev`
-* Init data : `node ./lib/initdb.js`
+```tsx
+    const project = {
+        app: [ // routing structure
+            "home",
+            "fit-track",
+            "login"
+        ],
+        core: [ // general functionality
+            "components",
+            "interfaces",
+            "utils"
+        ]
+    }
+```
