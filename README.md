@@ -9,7 +9,7 @@
 [react.cardinal.jrsmth.io](https://www.react.cardinal.jrsmth.io)
 
 ### Explanation
-- 🧬 Suite of tools to assist with Life Admin ([see more](https://github.com/cardinal-app))
+- 🧬 Suite of tools to assist with life admin ([see more](https://github.com/cardinal-app))
 - 💻 Public demo built with Next.js 
 
 ### Project Structure
