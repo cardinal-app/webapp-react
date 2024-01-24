@@ -1,0 +1,51 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Week {
+  id               Int         @id @default(autoincrement())
+  block            Int
+  week             Int
+  week_commencing  DateTime
+  week_notes       String?
+  flags            Flag[]
+  general          General?
+  resistance       Resistance?
+  running          Running?
+  createdAt        DateTime    @default(now()) @map(name: "created_at")
+  updatedAt        DateTime    @updatedAt @map(name: "updated_at")
+  @@map(name: "weeks")
+}
+
+model Flag {
+  id               Int         @id @default(autoincrement())
+  week             Week        @relation(fields: [weekId], references: [id])
+  weekId           Int         @unique
+}
+
+model General {
+  id               Int         @id @default(autoincrement())
+  week             Week        @relation(fields: [weekId], references: [id])
+  weekId           Int         @unique
+}
+
+model Resistance {
+  id               Int         @id @default(autoincrement())
+  week             Week        @relation(fields: [weekId], references: [id])
+  weekId           Int         @unique
+}
+
+model Running {
+  id               Int         @id @default(autoincrement())
+  volume           Int
+  week             Week        @relation(fields: [weekId], references: [id])
+  weekId           Int         @unique
+}
