@@ -3,7 +3,8 @@
 [![test-and-release](https://github.com/jrsmth/ultima/actions/workflows/main.yaml/badge.svg)](https://github.com/jrsmth/ultima/actions/workflows/main.yaml)
 ![Vercel](https://vercelbadge.vercel.app/api/cardinal-app/webapp-react)
 
-# <img src="./assets/badge.png" width="28" alt="Logo"> Same App 🧪 New Framework
+# <img src="./assets/badge.png" width="28" alt="Logo"> Webapp (React)
+🧪 Same app, new framework
 
 [react.cardinal.jrsmth.io](https://www.react.cardinal.jrsmth.io)
 
